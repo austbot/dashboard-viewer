@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ADD run /bin/run
-ADD jodel-wallpaper.png /etc/wallpaper.png
 ADD dot-mozilla /root/.mozilla
 
 ENTRYPOINT [ "/bin/run" ]
