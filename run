@@ -4,7 +4,7 @@ set -x
 PATH=${PATH}
 export USR=${USR:=admin}
 export PASS=${PASS:=root}
-DISPLAY_URL= "https://$USR:$PASS@$HOST"
+DISPLAY_URL= "https://$USR:$PASS@$HOST/$PATH"
 rm -rf /tmp/*
 DB_PID=$!
 Xorg &
