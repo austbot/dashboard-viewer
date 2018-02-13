@@ -4,7 +4,7 @@ set -x
 PATH=${PATH}
 export USR=${USR:=admin}
 export PASS=${PASS:=root}
-DISPLAY_URL= "https://$USR:$PASS@grafana.tools.ygrene.com"
+DISPLAY_URL= "https://$USR:$PASS@$HOST"
 rm -rf /tmp/*
 DB_PID=$!
 Xorg &
