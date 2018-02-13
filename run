@@ -1,10 +1,10 @@
 #!/bin/bash
 # set -euo pipefail
 set -x
-URL=${URL:-https://google.com}
+PATH=${PATH}
 export USR=${USR:=admin}
 export PASS=${PASS:=root}
-echo "$USR:$PASS" | chpasswd
+DISPLAY_URL= "https://$USR:$PASS@grafana.tools.ygrene.com"
 rm -rf /tmp/*
 DB_PID=$!
 Xorg &
@@ -13,7 +13,7 @@ echo "Waiting for X to be ready"
 export DISPLAY=:0
 # Setting wallpaper and polling X in one!
 matchbox-window-manager -use_cursor no &
-while ! curl -sf -o /dev/null "$URL"; do sleep 1; done
+while ! curl -sf -o /dev/null "$DISPLAY_URL"; do sleep 1; done
 xset -dpms
 xset s off
 xset s noblank
